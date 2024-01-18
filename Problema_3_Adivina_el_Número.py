@@ -1,5 +1,5 @@
-# Desarrolla un juego en el que el programa elige un número aleatorio entre 1 y 100, 
-# y el jugador debe adivinar ese número.
+# Desarrolla un juego en el que el programa elige un nÃºmero aleatorio entre 1 y 100, 
+# y el jugador debe adivinar ese nÃºmero.
 # El programa debe proporcionar pistas (mayor, menor o correcto) hasta que el jugador adivine.
 
 import os
@@ -22,10 +22,10 @@ while-True:
     numero = random.randint(1, 10)
     
     if adivinar < numero:
-        print(f"el numero a {adivinar}, es menor al numero que he pensado")
+        print(f"el numero a {adivinar}, es mayor al numero que he pensado")
   
     if adivinar > numero:
-        print(f"el numero a {adivinar}, es mayor al numero que he pensado")
+        print(f"el numero a {adivinar}, es menor al numero que he pensado")
     vidas -= 1
     
     if adivinar == numero:
