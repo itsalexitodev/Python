@@ -1,5 +1,7 @@
-# Implementa una función que calcule el factorial de un número dado. 
-# El factorial de un número 'n' se calcula multiplicando todos los números enteros desde 1 hasta 'n'.
+"""
+Implementa una funcion que calcule el factorial de un numero dado. 
+El factorial de un numero 'n' se calcula multiplicando todos los numeros enteros desde 1 hasta 'n'.
+"""
 
 import math
 

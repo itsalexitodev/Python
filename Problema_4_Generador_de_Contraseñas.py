@@ -1,5 +1,7 @@
-# Escribe un programa que genere una contraseña aleatoria. 
-# La contraseña debe tener una longitud predeterminada y contener letras mayúsculas, letras minúsculas y números.
+"""
+Escribe un programa que genere una contrasenya aleatoria. 
+La contrasenya debe tener una longitud predeterminada y contener letras mayusculas, letras minusculas y numeros.
+"""
 
 import random
 
