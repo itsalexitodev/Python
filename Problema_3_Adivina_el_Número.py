@@ -1,37 +1,41 @@
-# Desarrolla un juego en el que el programa elige un número aleatorio entre 1 y 100, 
-# y el jugador debe adivinar ese número.
-# El programa debe proporcionar pistas (mayor, menor o correcto) hasta que el jugador adivine.
+"""""
+Desarrolla un juego en el que el programa elige un número aleatorio entre 1 y 100, 
+y el jugador debe adivinar ese número.
+El programa debe proporcionar pistas (mayor, menor o correcto) hasta que el jugador adivine.
+"""
 
 import os
 import random
+import time
 
-print("Hola introduce tu nombre")
+print("Hola, introduce tu nombre")
 username = input()
+os.system("clear")
+
+print(f"Hola {username}, vamos a jugar a un juego")
 os.system("cls")
 
-print(f"hola {username}, vamos a jugar a un juego")
-os.system("cls")
+vidas = 10
+print(f"{username}, quiero que adivines un número entre 1 y 100")
 
-vidas = 3
-
-while-True:
-    print(f"{username}, quiero que adivines un numero entre el 1 y el 100")
-    
+while True:
+    print("Introduce un número:")
     adivinar = int(input())
+    os.system("cls")
 
-    numero = random.randint(1, 10)
-    
+    numero = random.randint(1, 100)
+
     if adivinar < numero:
-        print(f"el numero a {adivinar}, es mayor al numero que he pensado")
-  
-    if adivinar > numero:
-        print(f"el numero a {adivinar}, es menor al numero que he pensado")
-    vidas -= 1
-    
-    if adivinar == numero:
-        print(f"el numero a {adivinar}, es correcto")
-    
+        print(f"El número {adivinar} es mayor al número que he pensado.")
+        time.sleep(2)
+    elif adivinar > numero:
+        print(f"El número {adivinar} es menor al número que he pensado.")
+        time.sleep(2)
     else:
-        if vidas == 0:
-            print(f"el numero a adivinar era {numero}")
-    
+        print(f"¡Felicidades, {username}! Has adivinado el número correctamente.")
+        break
+
+    vidas -= 1
+    if vidas == 0:
+        print(f"El número a adivinar era {numero}. Has agotado tus vidas. ¡Intenta de nuevo!")
+        break
