@@ -1,4 +1,4 @@
-"""""
+"""
 Escribe un programa que tome una lista de números como entrada 
 y devuelva la lista ordenada de forma ascendente.
 """
