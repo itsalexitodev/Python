@@ -4,10 +4,24 @@ La funcion debe devolver la posicion del elemento si se encuentra y un
 mensaje indicando que el elemento no esta presente en caso contrario.
 """
 
-print("que marca de coche quieres buscar")
-marca = input()
+import os
+import time
 
-marcas_de_coches = ["Toyota", "Honda", "Ford", "Chevrolet", "Volkswagen", "BMW", "Mercedes-Benz", "Audi", "Nissan", "Tesla"]
+print("Ingrese una marca de coche:")
+car_ls = ["Toyota Camry", "Honda Accord", "Ford Mustang", "Chevrolet Silverado", "Volkswagen Golf", "Tesla Model S", "Nissan Altima", 
+          "BMW 3 Series", "Mercedes-Benz C-Class", "Audi A4", "Hyundai Sonata","Kia Optima", "Subaru Outback", "Mazda3", "Lexus RX",
+          "Jeep Wrangler", "Ram 1500", "Ford F-150", "Chevrolet Equinox", "Toyota RAV4"]
+for elemento in car_ls:
+    print(elemento)
+    time.sleep(2)
+os.system("cls")
+search_car = input()
 
-if marca == marcas_de_coches:
-    print(f"la marca es {marca} ")    
+def buscar_elemento(lista, elemento):
+    if elemento in lista:
+        return f"El elemento {elemento} se encuentra en la posición {lista.index(elemento)}."
+    else: 
+        return f"El elemento {elemento} no está presente en la lista."
+
+resultado_busqueda = buscar_elemento(car_ls, search_car)
+print(resultado_busqueda)

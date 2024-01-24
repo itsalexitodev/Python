@@ -10,7 +10,7 @@ import time
 
 print("Hola, introduce tu nombre")
 username = input()
-os.system("clear")
+os.system("cls")
 
 print(f"Hola {username}, vamos a jugar a un juego")
 os.system("cls")
