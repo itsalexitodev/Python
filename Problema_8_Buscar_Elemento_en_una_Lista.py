@@ -13,9 +13,10 @@ car_ls = ["Toyota Camry", "Honda Accord", "Ford Mustang", "Chevrolet Silverado",
           "Jeep Wrangler", "Ram 1500", "Ford F-150", "Chevrolet Equinox", "Toyota RAV4"]
 for elemento in car_ls:
     print(elemento)
-    time.sleep(2)
-os.system("cls")
+    time.sleep(0)
+
 search_car = input()
+os.system("cls")
 
 def buscar_elemento(lista, elemento):
     if elemento in lista:
