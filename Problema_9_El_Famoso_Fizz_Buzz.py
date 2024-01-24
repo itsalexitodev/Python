@@ -9,15 +9,15 @@
  */
 """
 
-numbers = range(1, 100)
+numbers = range(1, 101)
+
 
 for number in numbers:
-    if number % 3  == 0:
-        number = "fizz"
-        print(number)
+    if number % 3 == 0:
+        print("fizz")
     elif  number % 5 == 0:
-        number = "Buzz"
+        print("Buzz")
+    elif number % 3 & number % 5 == 0:
+           print("fizzbuzz")
+    else:
         print(number)
-    elif number % 3 and 5 == 0:
-        number = "fizzbuzz"
-        print(number)  
