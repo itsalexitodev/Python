@@ -15,7 +15,7 @@ for number in numbers:
     if number % 3  == 0:
         number = "fizz"
         print(number)
-    if  number % 5 == 0:
+    elif  number % 5 == 0:
         number = "Buzz"
         print(number)
     elif number % 3 and 5 == 0:
