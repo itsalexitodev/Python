@@ -1,7 +1,9 @@
 """
-Desarrolla una funcion que busque un elemento especifico en una lista. 
-La funcion debe devolver la posicion del elemento si se encuentra y un 
-mensaje indicando que el elemento no esta presente en caso contrario.
+*/
+ * Desarrolla una funcion que busque un elemento especifico en una lista. 
+ * La funcion debe devolver la posicion del elemento si se encuentra y un 
+ * mensaje indicando que el elemento no esta presente en caso contrario.
+ */
 """
 
 import os
