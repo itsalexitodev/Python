@@ -1,6 +1,8 @@
 """
-Escribe un programa que tome una lista de números como entrada 
-y devuelva la lista ordenada de forma ascendente.
+/*
+ * Escribe un programa que tome una lista de números como entrada 
+ * y devuelva la lista ordenada de forma ascendente.
+ */
 """
 
 print("Ingrese una lista de números separados por espacio:")

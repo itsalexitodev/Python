@@ -1,7 +1,9 @@
 """
-Crea una funcion que tome una cadena como entrada y 
-devuelva el numero de palabras en esa cadena. 
-Considera que las palabras estan separadas por espacios.
+/*
+ * Crea una funcion que tome una cadena como entrada y 
+ * devuelva el numero de palabras en esa cadena. 
+ * Considera que las palabras estan separadas por espacios.
+*/
 """
 
 print("Ingrese una cadena de texto: ")

@@ -1,7 +1,9 @@
-"""""
-Desarrolla un juego en el que el programa elige un número aleatorio entre 1 y 100, 
-y el jugador debe adivinar ese número.
-El programa debe proporcionar pistas (mayor, menor o correcto) hasta que el jugador adivine.
+"""
+/*
+ * Desarrolla un juego en el que el programa elige un número aleatorio entre 1 y 100, 
+ * y el jugador debe adivinar ese número.
+ * El programa debe proporcionar pistas (mayor, menor o correcto) hasta que el jugador adivine.
+ */
 """
 
 import os

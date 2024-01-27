@@ -1,7 +1,9 @@
-""""
-Escribe un programa que solicite al usuario un n�mero entero positivo 'n' y 
-luego calcule la suma de los primeros 'n' n�meros pares.
--*- coding: utf-8 -*-
+"""
+/*
+ * Escribe un programa que solicite al usuario un n�mero entero positivo 'n' y 
+ * luego calcule la suma de los primeros 'n' n�meros pares.
+ * -*- coding: utf-8 -*-
+ */
 """
 
 def es_primo(numero):
