@@ -17,3 +17,53 @@
  * carregar_contactes(nom_fitxer): Carrega els contactes des d’un fitxer.
  */
  """
+
+
+
+def afegir_contacte():
+    pass
+
+def eliminar_contacte():
+    pass
+
+
+def veure_contactes():
+    pass
+
+
+def desar_contactes():
+    pass
+
+def carregar_contactes():
+    pass
+
+def cercar_contacte():
+    pass
+
+
+while-True:
+    print("Que qu8ieres hacer?")
+    print("1. afegir_contacte")
+    print("2. eliminar_contacte")
+    print("3. veure_contactes")
+    print("4. desar_contactes")
+    print("5. carregar_contactes")
+    print("6. carregar_contactes")
+    print("7. salir")
+
+    opcion = int(input())
+    if opcion == "1":
+        afegir_contacte()
+    elif opcion == "2":
+        eliminar_contacte()
+    elif opcion == "3":
+        veure_contactes()
+    elif opcion == "4":
+        desar_contactes()
+    elif opcion == "5":
+        carregar_contactes()
+    elif opcion == "6":
+        cercar_contacte()
+    else:
+        opcion == "7"
+        break
