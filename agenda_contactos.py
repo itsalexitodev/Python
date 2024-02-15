@@ -17,5 +17,3 @@
  * carregar_contactes(nom_fitxer): Carrega els contactes des d’un fitxer.
  */
  """
-def pepe():
-    
