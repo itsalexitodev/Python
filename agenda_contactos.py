@@ -21,7 +21,10 @@
 
 
 def afegir_contacte():
-    pass
+    print("a quin quieres añadir?")
+    contacto = input()
+    file = open("./agenda.txt", "w")
+    file.write(contacto)
 
 def eliminar_contacte():
     pass
@@ -39,6 +42,7 @@ def carregar_contactes():
 
 def cercar_contacte():
     pass
+
 
 
 while-True:
