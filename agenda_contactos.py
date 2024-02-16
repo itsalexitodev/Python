@@ -18,57 +18,56 @@
  */
  """
 
-
-
 def afegir_contacte():
-    print("a quin quieres añadir?")
-    contacto = input()
-    file = open("./agenda.txt", "w")
-    file.write(contacto)
-
-def eliminar_contacte():
     pass
-
 
 def veure_contactes():
     pass
 
+def eliminar_contacte():
+    pass
 
+def cercar_contacte():
+    pass
+ 
 def desar_contactes():
     pass
 
 def carregar_contactes():
     pass
 
-def cercar_contacte():
-    pass
+while True:
+    print("\nQuè vols fer?")
+    print("1. Afegir contacte")
+    print("2. Veure contactes")
+    print("3. Eliminar contacte")
+    print("4. Cercar contacte")
+    print("5. Desar contactes en un fitxer")
+    print("6. Carregar contactes des d'un fitxer")
+    print("7. Sortir")
 
+    opcio = input("Selecciona una opció (1-7): ")
 
-
-while-True:
-    print("Que qu8ieres hacer?")
-    print("1. afegir_contacte")
-    print("2. eliminar_contacte")
-    print("3. veure_contactes")
-    print("4. desar_contactes")
-    print("5. carregar_contactes")
-    print("6. carregar_contactes")
-    print("7. salir")
-
-    opcion = int(input())
-    if opcion == "1":
-        afegir_contacte()
-    elif opcion == "2":
-        eliminar_contacte()
-    elif opcion == "3":
-        veure_contactes()
-    elif opcion == "4":
-        desar_contactes()
-    elif opcion == "5":
-        carregar_contactes()
-    elif opcion == "6":
-        cercar_contacte()
-    else:
-        opcion == "7"
+    if opcio == "1":
+        nom = input("Introdueix el nom del contacte: ")
+        telefon = input("Introdueix el telèfon del contacte: ")
+        afegir_contacte(agenda, nom, telefon)
+    elif opcio == "2":
+        veure_contactes(agenda)
+    elif opcio == "3":
+        nom = input("Introdueix el nom del contacte que vols eliminar: ")
+        eliminar_contacte(agenda, nom)
+    elif opcio == "4":
+        nom = input("Introdueix el nom del contacte que vols cercar: ")
+        cercar_contacte(agenda, nom)
+    elif opcio == "5":
+        nom_fitxer = input("Introdueix el nom del fitxer en què vols desar els contactes: ")
+        desar_contactes(agenda, nom_fitxer)
+    elif opcio == "6":
+        nom_fitxer = input("Introdueix el nom del fitxer del qual vols carregar els contactes: ")
+        agenda = carregar_contactes(nom_fitxer)
+    elif opcio == "7":
+        print("Gràcies per utilitzar l'aplicació d'agenda de contactes. Adeu!")
         break
-
+    else:
+        print("Opció no vàlida. Si us plau, selecciona una opció vàlida (1-7).")
