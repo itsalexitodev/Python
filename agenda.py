@@ -18,6 +18,24 @@
  */
  """
 
+  def afegir_contacte():
+    pass
+
+def veure_contactes():
+    pass
+
+def eliminar_contacte():
+    pass
+
+def cercar_contacte():
+    pass
+ 
+def desar_contactes():
+    pass
+
+def carregar_contactes():
+    pass
+
 
 
 while True:
