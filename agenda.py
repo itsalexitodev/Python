@@ -36,7 +36,7 @@ def desar_contactes():
 def carregar_contactes():
     pass
 
-
+agenda = {}
 
 while True:
     print("\nQuè vols fer?")
