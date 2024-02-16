@@ -18,3 +18,40 @@
  */
  """
 
+
+
+while True:
+    print("\nQuè vols fer?")
+    print("1. Afegir contacte")
+    print("2. Veure contactes")
+    print("3. Eliminar contacte")
+    print("4. Cercar contacte")
+    print("5. Desar contactes en un fitxer")
+    print("6. Carregar contactes des d'un fitxer")
+    print("7. Sortir")
+
+    opcio = input("Selecciona una opció (1-7): ")
+
+    if opcio == "1":
+        nom = input("Introdueix el nom del contacte: ")
+        telefon = input("Introdueix el telèfon del contacte: ")
+        afegir_contacte(agenda, nom, telefon)
+    elif opcio == "2":
+        veure_contactes(agenda)
+    elif opcio == "3":
+        nom = input("Introdueix el nom del contacte que vols eliminar: ")
+        eliminar_contacte(agenda, nom)
+    elif opcio == "4":
+        nom = input("Introdueix el nom del contacte que vols cercar: ")
+        cercar_contacte(agenda, nom)
+    elif opcio == "5":
+        nom_fitxer = input("Introdueix el nom del fitxer en què vols desar els contactes: ")
+        desar_contactes(agenda, nom_fitxer)
+    elif opcio == "6":
+        nom_fitxer = input("Introdueix el nom del fitxer del qual vols carregar els contactes: ")
+        agenda = carregar_contactes(nom_fitxer)
+    elif opcio == "7":
+        print("Gràcies per utilitzar l'aplicació d'agenda de contactes. Adeu!")
+        break
+    else:
+        print("Opció no vàlida. Si us plau, selecciona una opció vàlida (1-7).")
