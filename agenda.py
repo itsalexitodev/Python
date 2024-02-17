@@ -2,21 +2,21 @@
 
 """
 /*
- * Es demana que desenvolupeu EN PARELLES una aplicació d’agenda de contactes en Python amb les
- * següents funcionalitats:
- * 1. Afegir contacte: Permet als usuaris afegir un nou contacte amb nom i número de telèfon.
+ * Es demana que desenvolupeu EN PARELLES una aplicaciï¿½ dï¿½agenda de contactes en Python amb les
+ * segï¿½ents funcionalitats:
+ * 1. Afegir contacte: Permet als usuaris afegir un nou contacte amb nom i nï¿½mero de telï¿½fon.
  * 2. Veure contactes: Mostra tots els contactes guardats.
  * 3. Eliminar contacte: Permet als usuaris eliminar un contacte pel seu nom.
  * 4. Cerca de contactes: Permet als usuaris cercar un contacte pel seu nom.
- * 5. Guardar i carregar contactes en un fitxer: L’aplicació ha de permetre als usuaris desar els contactes en un
+ * 5. Guardar i carregar contactes en un fitxer: Lï¿½aplicaciï¿½ ha de permetre als usuaris desar els contactes en un
  * fitxer i carregar-los posteriorment.
  
- * afegir_contacte(nom, telèfon): Afegeix un contacte al diccionari.
+ * afegir_contacte(nom, telï¿½fon): Afegeix un contacte al diccionari.
  * veure_contactes(): Mostra tots els contactes guardats.
  * eliminar_contacte(nom): Elimina un contacte pel seu nom.
  * cercar_contacte(nom): Cerca un contacte pel seu nom.
  * desar_contactes(nom_fitxer): Guarda els contactes en un fitxer.
- * carregar_contactes(nom_fitxer): Carrega els contactes des d’un fitxer.
+ * carregar_contactes(nom_fitxer): Carrega els contactes des dï¿½un fitxer.
  */
  """
 
@@ -64,7 +64,7 @@ def carregar_contactes(agenda, agenda_txt):
 agenda = {}
 
 while True:
-    print("\nQuè vols fer?\n")
+    print("\nQuï¿½ vols fer?\n")
     print("1. Afegir contacte")
     print("2. Veure contactes")
     print("3. Eliminar contacte")
@@ -73,11 +73,11 @@ while True:
     print("6. Carregar contactes des d'un fitxer")
     print("7. Sortir")
 
-    opcio = input("\nSelecciona una opció (1-7): \n")
+    opcio = input("\nSelecciona una opciï¿½ (1-7): \n")
 
     if opcio == "1":
         nom = input("\nIntrodueix el nom del contacte: \n")
-        telefon = input("\nIntrodueix el telèfon del contacte: \n")
+        telefon = input("\nIntrodueix el telï¿½fon del contacte: \n")
         afegir_contacte(agenda, nom, telefon)
     elif opcio == "2":
         veure_contactes(agenda)
@@ -88,13 +88,13 @@ while True:
         nom = input("\nIntrodueix el nom del contacte que vols cercar: \n")
         cercar_contacte(agenda, nom)
     elif opcio == "5":
-        agenda_txt = input("\nIntrodueix el nom del fitxer en què vols desar els contactes: \n")
+        agenda_txt = input("\nIntrodueix el nom del fitxer en quï¿½ vols desar els contactes: \n")
         desar_contactes(agenda, agenda_txt)
     elif opcio == "6":
         agenda_txt = input("\nIntrodueix el nom del fitxer del qual vols carregar els contactes: \n")
         agenda = carregar_contactes(agenda, agenda_txt)
     elif opcio == "7":
-        print("\nGràcies per utilitzar l'aplicació d'agenda de contactes. Adeu!\n")
+        print("\nGrï¿½cies per utilitzar l'aplicaciï¿½ d'agenda de contactes. Adeu!\n")
         break
     else:
-        print("\nOpció no vàlida. Si us plau, selecciona una opció vàlida (1-7).\n")
+        print("\nOpciï¿½ no vï¿½lida. Si us plau, selecciona una opciï¿½ vï¿½lida (1-7).\n")
