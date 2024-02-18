@@ -18,44 +18,23 @@
 """
 
 def agregar_contacto(agenda, nombre, telefono):
-    agenda[nombre] = telefono
+    pass
 
 def ver_contactos(agenda):
-    if not agenda:
-        print("\nNo hay ningún contacto en la agenda.\n")
-    else:
-        for nombre, telefono in agenda.items():
-            print(f'\nNombre: {nombre}\nTeléfono: {telefono}\n')
+  pass
 
 def eliminar_contacto(agenda, nombre):
-    if nombre in agenda:
-        del agenda[nombre]
-        print(f"\nEl contacto {nombre} se ha eliminado. \n")
-    else:
-        print("\nEste contacto no existe en la agenda. \n")
+    pass
 
 def buscar_contacto(agenda, nombre):
-    if nombre in agenda:
-        print(f'\nNombre: {nombre}\nTeléfono: {agenda[nombre]}\n')
-    else:
-        print("Este contacto no existe en la agenda.")
+    pass
 
 def guardar_contactos(agenda, archivo_agenda):
-    with open(archivo_agenda, 'w') as archivo:
-        for nombre, telefono in agenda.items():
-            archivo.write(f"{nombre},{telefono}\n")
-    print("\nLos contactos se han guardado correctamente. \n")
+    pass
 
 def cargar_contactos(agenda, archivo_agenda):
-    try:
-        with open(archivo_agenda, 'r') as archivo:
-            for linea in archivo:
-                nombre, telefono = linea.strip().split(',')
-                agenda[nombre] = telefono
-        print("\nLos contactos se han cargado correctamente. \n")
-        return agenda
-    except FileNotFoundError:
-        print("\nNo se ha podido encontrar el archivo de agenda. \n")
+    pass
+  
 
 agenda = {}
 
