@@ -35,7 +35,7 @@ for host in $hosts; do
     fi
     
     # Intentar iniciar sesión con credenciales utilizando Hydra y capturar el resultado en una variable
-    result=$(hydra -l alumne -p alumnealumne  ssh://"$host" -s 22 -f -vV 2>&1)
+    result=$(hydra -l "alumne" -p "alumnealumne"  ssh://"$host" -s 22 -f -vV 2>&1)
     # Verificar el resultado de Hydra
     if [[ $result == *"success"* ]]; then
         access_status="Powned"
